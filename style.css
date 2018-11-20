@@ -18,10 +18,12 @@
     background-size: cover;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    margin:5px;
 }
 
 .hidden {
     background-color: #FED83B;
+    background-image: none !important;
     border:15px solid #DAB92C;
 }
 
@@ -29,7 +31,7 @@
     background-color: #e8e0e0;
 }
 
-/*classes for item*/
+/*classes with items logos*/
 
 .javascript {
     background-image: url(img/javascript.png);
