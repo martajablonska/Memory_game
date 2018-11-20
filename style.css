@@ -1,0 +1,68 @@
+* {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width:85%;
+    margin:20px auto;
+}
+
+.item {
+    width:200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.hidden {
+    background-color: #FED83B;
+    border:15px solid #DAB92C;
+}
+
+.completed {
+    background-color: #e8e0e0;
+}
+
+/*classes for item*/
+
+.javascript {
+    background-image: url(img/javascript.png);
+}
+
+.html {
+    background-image: url(img/html.png);
+}
+
+.css {
+    background-image: url(img/css.png);
+}
+
+.github {
+    background-image: url(img/github.png);
+}
+
+.react {
+    background-image: url(img/react.png);
+}
+
+.angular {
+    background-image: url(img/angular.png);
+}
+
+.gulp {
+    background-image: url(img/gulp.png);
+}
+
+.sass {
+    background-image: url(img/sass.png);
+}
+
+.vue {
+    background-image: url(img/vue.png);
+}
