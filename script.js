@@ -11,6 +11,7 @@ const gamePairs = itemsLogos.length/2;
 let gameResult = 0;
 
 function clicked() {
+    
     activeItem = this;
     if(activeItem == activeItems[0]) //jeśli ktoś dwa razy kliknie w to samo konczymy dzialanie funkcji
         return;
@@ -35,17 +36,26 @@ function clicked() {
                     item.classList.add('completed'); 
                     })   
                     gameResult++;
+                   
+                    /*console.log(items);
+                    items = items.filter(item => {
+                       1;
+                    });
+                   
+                   console.log(items);*/
                     if(gameResult == gamePairs) { //sprawdza czy gra już jest wygrana
                         const endTime = new Date().getTime();
                         const gameTime = (endTime - startTime)/1000;
                         alert(`Wygrana! Czas gry: ${gameTime} sekund`)
                         location.reload(); //zacznij gre                     
                     }
+                   
                 } else {
                     activeItems.forEach(item => {
                         item.classList.add('hidden');
                     })
                 }
+            
                 activeItem = '';  //resetuje nam aktywne katy po zakończeniu pojedynczej gry
                 activeItems.length=0;
 
