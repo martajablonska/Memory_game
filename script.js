@@ -13,25 +13,25 @@ let gameResult = 0;
 function clicked() {
     
     activeItem = this;
-    if(activeItem == activeItems[0]) //jeśli ktoś dwa razy kliknie w to samo konczymy dzialanie funkcji
+    if(activeItem == activeItems[0]) //if someone clicks on clicked item end 'clicked' function to prevent double click on the same item
         return;
     
     activeItem.classList.remove('hidden');
     
-    if(activeItems.length === 0) { //sprawdza czy jest to pierwsze kliknięcie 
+    if(activeItems.length === 0) { //to check if it's a first click
         activeItems[0] = activeItem;
         return;
     }
     
-    else {              //sprawdza czy to drugie kliknięcie
+    else {                         //second click
         items.forEach(item => {
-            item.removeEventListener('click', clicked)  // usuwam możliwość kliknięcia jeśli to drugie
+            item.removeEventListener('click', clicked)  // remove 'clicked' function if it's a second click
         })
         activeItems[1] = activeItem;
         
-        setTimeout(function() {//opóżnia wyświetlenie żeby można było zobaczyć kart
+        setTimeout(function() {                       //to show clicked item for a while before executing next step
             
-               if(activeItems[0].className === activeItems[1].className) { //porównuje dwa kliknięte lementy czy są takie same
+               if(activeItems[0].className === activeItems[1].className) { //to check if clicked items are the same
                     activeItems.forEach(item => {
                     item.classList.add('completed'); 
                     })   
@@ -43,11 +43,11 @@ function clicked() {
                     });
                    
                    console.log(items);*/
-                    if(gameResult == gamePairs) { //sprawdza czy gra już jest wygrana
+                    if(gameResult == gamePairs) {                       //to check if game is over
                         const endTime = new Date().getTime();
                         const gameTime = (endTime - startTime)/1000;
                         alert(`Wygrana! Czas gry: ${gameTime} sekund`)
-                        location.reload(); //zacznij gre                     
+                        location.reload();                              //start new game after game over
                     }
                    
                 } else {
@@ -56,10 +56,10 @@ function clicked() {
                     })
                 }
             
-                activeItem = '';  //resetuje nam aktywne katy po zakończeniu pojedynczej gry
+                activeItem = '';                                      //reset active items after one mini game
                 activeItems.length=0;
 
-                items.forEach(item => {   //dodaje znów nasłuchiwacza 
+                items.forEach(item => {   
                     item.addEventListener('click', clicked);
                 })    
 
@@ -69,18 +69,18 @@ function clicked() {
 }
 
 function start() {
-    items.forEach(item => {
+    items.forEach(item => {                                          //create new items position
         const logoIndex = Math.floor(Math.random()*itemsLogos.length);
         item.classList.add(itemsLogos[logoIndex]);
         itemsLogos.splice(logoIndex, 1);
     })
     
-    setTimeout(function() {
+    setTimeout(function() {                                          //show all items for a while before game will started
         items.forEach(item => {
             item.classList.add('hidden')
             item.addEventListener('click', clicked)
         })
-    }, 2000)
+    }, 1000)
 };
 
 start();
