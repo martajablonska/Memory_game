@@ -8,7 +8,7 @@ Project is created with:
 * CSS 3 
 * JavaScript
 
-## To do:
+## To do
 * add the best game time (local storage)
 
 
