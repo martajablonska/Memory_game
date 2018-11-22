@@ -9,8 +9,6 @@ Project is created with:
 * JavaScript
 
 ## To do:
-* RWD
-* correct logo display
 * prevent double click on the same item
 
 
