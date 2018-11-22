@@ -36,13 +36,9 @@ function clicked() {
                     item.classList.add('completed'); 
                     })   
                     gameResult++;
-                   
-                    /*console.log(items);
-                    items = items.filter(item => {
-                       1;
-                    });
-                   
-                   console.log(items);*/
+                         
+                    items = items.filter(item => !item.classList.contains('completed'));    //to remove clicked items from the game
+    
                     if(gameResult == gamePairs) {                       //to check if game is over
                         const endTime = new Date().getTime();
                         const gameTime = (endTime - startTime)/1000;
