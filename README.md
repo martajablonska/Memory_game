@@ -9,6 +9,6 @@ Project is created with:
 * JavaScript
 
 ## To do:
-* prevent double click on the same item
+* add the best game time (local storage)
 
 
